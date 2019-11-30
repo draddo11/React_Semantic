@@ -1,9 +1,11 @@
 import React from 'react';
 
+
 import  'semantic-ui-css/semantic.min.css';
 import {Card , Icon} from 'semantic-ui-react';
-// import App from '../App';
 
+import Dog from './dog.component';
+// import App from '../App';
 
 
 
@@ -23,15 +25,22 @@ const CardView = () => {
         {"id":33,"meta":"programming","setup":"Which song would an exception sing?","description":"Can't catch me - Avicii"}
     ]
 
+    const LinkedCard2 = () => (
+        <Card
+          href={<CardView/>}
+          header='Elliot Baker'
+          meta='Friend'
+          description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
+        />
+      )
+
 
 return(
 jokes.map(jokes =>(
-    <Card fluid color='red' header={jokes.setup }
-     meta={jokes.description}></Card>
-     
-    //
-
+    <Card.Group key ={jokes.id} centered color='red'  header={jokes.setup }
+     meta={jokes.description}/>
 )
+
 )
 
 );
